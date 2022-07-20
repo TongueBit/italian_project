@@ -13,10 +13,6 @@ public class ReviewRepository {
 	private Integer idCounter = 0;
 	private ArrayList<ReviewCard> reviewCards = new ArrayList<>();
 	
-	
-	private ArrayList<String> reviewList;
-	
-	
 	public ArrayList<ReviewCard> fetchAllReviewCards() {
 		if(reviewCards.size() == 0) {
 			ReviewCard review1 = new ReviewCard();
@@ -25,17 +21,16 @@ public class ReviewRepository {
 			review1.setRating(0);
 			review1.setDescription("Tony provides an excellent service with care and precision, meeting all your italian citizenship needs");
 			
-			//Needs work
-			/*
-			 * reviewList.add("Can't believe they don't cahrge more!");
-			 * reviewList.add("Can't believe it's not butter!");
-			 * review1.setReviews(reviewList);
-			 */
+			review1.setReviews("Can't believe they don't cahrge more!");
+			review1.setReviews("Shit this muthafucka good!");
+			
+			 
 			reviewCards.add(review1);
 		}
 		return reviewCards;
 	}
 		
+	
 	
 
 }

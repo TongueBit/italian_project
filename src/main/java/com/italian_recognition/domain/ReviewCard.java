@@ -8,7 +8,7 @@ public class ReviewCard {
 	private String title;
 	private float rating;
 	private String description;
-	private ArrayList<String> reviews;
+	private ArrayList<String> reviews = new ArrayList();
 	
 	public int getReviewId() {
 		return reviewId;
@@ -39,8 +39,8 @@ public class ReviewCard {
 		return reviews;
 	}
 	//does not work, throws http 500 error
-	public void setReviews(ArrayList arr) {
-		reviews.addAll(arr);
+	public void setReviews(String review) {
+		reviews.add(review);
 	}
 
 	

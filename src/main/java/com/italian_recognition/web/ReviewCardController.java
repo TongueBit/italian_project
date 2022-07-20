@@ -36,7 +36,7 @@ public class ReviewCardController {
 	@GetMapping("/api/reviewCards")
 	public ResponseEntity<?> fetchAllReviewItems() {
 		
-		List<ReviewCard> reviewCards = reviewService.fetchAllTodoItems();
+		List<ReviewCard> reviewCards = reviewService.fetchAllReviewCards();
 		
 		return ResponseEntity.status(HttpStatus.OK).body(reviewCards);
 	}

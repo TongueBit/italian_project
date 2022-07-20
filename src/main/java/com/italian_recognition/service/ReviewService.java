@@ -15,7 +15,7 @@ public class ReviewService {
 	private ReviewRepository reviewRepo;
 
 	
-	public ArrayList<ReviewCard> fetchAllTodoItems() {
+	public ArrayList<ReviewCard> fetchAllReviewCards() {
 		ArrayList<ReviewCard> reviewCards = reviewRepo.fetchAllReviewCards();
 		return reviewCards;
 	}
