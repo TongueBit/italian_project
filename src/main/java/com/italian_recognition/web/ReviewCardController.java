@@ -17,6 +17,7 @@ import com.italian_recognition.domain.ReviewCard;
 import com.italian_recognition.service.ReviewService;
 
 
+
 @RestController
 @CrossOrigin( origins = "http://localhost:3000")
 public class ReviewCardController {
@@ -41,8 +42,21 @@ public class ReviewCardController {
 		return ResponseEntity.status(HttpStatus.OK).body(reviewCards);
 	}
 	
+	@PostMapping("/api/reviewCards")
+	public ResponseEntity<?> createNewReviewCard() {
+		ReviewCard reviewCard = reviewService.createReviewCard();
+		
+		return ResponseEntity.ok(reviewCard);
+		
+	}
 	
-	
+	@PutMapping("/api/reviewCards/{id}")
+	public ResponseEntity<?> updateTodoItem(@PathVariable Integer id, @RequestBody ReviewCard reviewCard) {
+		ReviewCard updatedReviewCard = reviewService.updateReviewCard(id, reviewCard);
+		
+		
+		return ResponseEntity.ok(updatedReviewCard);
+	}
 		
 }
 

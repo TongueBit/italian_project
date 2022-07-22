@@ -20,5 +20,20 @@ public class ReviewService {
 		return reviewCards;
 	}
 
+
+	public ReviewCard createReviewCard() {
+		ReviewCard reviewCard = new ReviewCard();
+		reviewCard = reviewRepo.save(reviewCard);
+		
+		return reviewCard;
+		
+	}
+
+
+	public ReviewCard updateReviewCard(Integer id, ReviewCard reviewCard) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
  

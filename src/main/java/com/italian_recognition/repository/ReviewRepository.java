@@ -26,11 +26,18 @@ public class ReviewRepository {
 			
 			 
 			reviewCards.add(review1);
+			return reviewCards;
 		}
-		return reviewCards;
+		else
+			return reviewCards;
 	}
 		
-	
+	public ReviewCard save(ReviewCard reviewCard) {
+		reviewCard.setReviewId(idCounter++);
+		reviewCards.add(reviewCard);
+		
+		return reviewCard;
+	}
 	
 
 }
