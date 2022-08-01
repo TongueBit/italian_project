@@ -42,9 +42,20 @@ public class ReviewCardController {
 		return ResponseEntity.status(HttpStatus.OK).body(reviewCards);
 	}
 	
+	@GetMapping("/api/reviewCards/{reviewId}")
+	public ResponseEntity<?> fetchReviewCard(@PathVariable Integer reviewId) {
+		
+		System.out.println(reviewId);
+		ReviewCard reviewCard = reviewService.fetchReviewCard(reviewId);
+		
+		return ResponseEntity.status(HttpStatus.OK).body(reviewCard);
+	}
+	
+	//works but cannot send a list in POST request for "reviews"
 	@PostMapping("/api/reviewCards")
-	public ResponseEntity<?> createNewReviewCard() {
-		ReviewCard reviewCard = reviewService.createReviewCard();
+	public ResponseEntity<?> createNewReviewCard(@RequestBody ReviewCard reviewCard) {
+		System.out.println(reviewCard);
+		reviewCard = reviewService.createReviewCard(reviewCard);
 		
 		return ResponseEntity.ok(reviewCard);
 		
@@ -53,7 +64,6 @@ public class ReviewCardController {
 	@PutMapping("/api/reviewCards/{id}")
 	public ResponseEntity<?> updateTodoItem(@PathVariable Integer id, @RequestBody ReviewCard reviewCard) {
 		ReviewCard updatedReviewCard = reviewService.updateReviewCard(id, reviewCard);
-		
 		
 		return ResponseEntity.ok(updatedReviewCard);
 	}

@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class ReviewCard {
 	
-	private int reviewId;
+	private Integer reviewId;
 	private String title;
 	private float rating;
 	private String description;
 	private ArrayList<String> reviews = new ArrayList();
 	
-	public int getReviewId() {
+	public Integer getReviewId() {
 		return reviewId;
 	}
 	public void setReviewId(int reviewId) {
